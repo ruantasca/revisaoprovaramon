@@ -1,23 +1,23 @@
 import React from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
-const TransactionControls = ({ amount, setAmount, handleDeposit, handleWithdraw }) => {
+const ControlesTransacao = ({ valor, setValor, Depositar, Sacar }) => {
   return (
-    <View style={styles.container}>
+    <View style={estilos.container}>
       <TextInput
-        style={styles.input}
-        value={amount}
-        onChangeText={setAmount}
+        style={estilos.input}
+        value={valor}
+        onChangeText={setValor}
         placeholder="Digite o valor"
         keyboardType="numeric"
       />
-      <Button title="Depositar" onPress={handleDeposit} />
-      <Button title="Sacar" onPress={handleWithdraw} color="red" />
+      <Button title="Depositar" onPress={Depositar} />
+      <Button title="Sacar" onPress={Sacar} color="red" />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
+const estilos = StyleSheet.create({
   container: {
     width: '100%',
     marginTop: 20,
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TransactionControls;
+export default ControlesTransacao;
